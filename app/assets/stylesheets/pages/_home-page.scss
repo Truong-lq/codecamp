@@ -1,0 +1,34 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  row-gap: 3rem;
+  column-gap: 4rem;
+  
+  .card {
+    max-width: 100%;
+    height: 28rem;
+    transition: box-shadow 0.3s ease;
+    &-img-top {
+      width: 100%;
+      height: 65%;  
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+    }
+    // Effect
+    &:hover {
+      box-shadow: -1px -1px 106px -48px rgba(0,0,0,0.47);
+      -webkit-box-shadow: -1px -1px 106px -48px rgba(0,0,0,0.47);
+      -moz-box-shadow: -1px -1px 106px -48px rgba(0,0,0,0.47);
+      .card-img-top {
+        img {
+          transform: scale(1.1, 1.1);
+        }
+      }
+    }
+  }
+}
