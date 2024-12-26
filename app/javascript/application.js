@@ -3,3 +3,5 @@ import "jquery"
 import "jquery_ujs"
 import "popper"
 import "bootstrap"
+
+import './ajax_search_book'
