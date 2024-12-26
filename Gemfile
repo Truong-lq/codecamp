@@ -39,6 +39,7 @@ gem "jquery-rails"
 gem "sassc-rails"
 gem "faker", "~> 3.4", ">= 3.4.2"
 gem "slim-rails"
+gem "pry", "~> 0.14.1"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

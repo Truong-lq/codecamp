@@ -1,0 +1,13 @@
+- if books.present?
+    .card-container
+        - books.each do |book|
+            div.card 
+                = link_to image_tag("book.webp", alt: book.title, class: "rounded-top"), 
+                          "#", 
+                          class: "card-img-top"
+                div.card-body
+                    h5.card-title.line-clamp-1
+                        = book.title
+                    p.card-text.line-clamp-2
+                        = book.content
+                    = link_to "View detail", "#", class: "btn btn-primary"

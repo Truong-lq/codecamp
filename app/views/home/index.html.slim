@@ -1,13 +1,5 @@
 main.py-5
-  .card-container
-    - @books.each do |book|
-        div.card 
-          = link_to image_tag("book.webp", alt: book.title, class: "rounded-top"), 
-                    "#", 
-                    class: "card-img-top"
-          div.card-body
-            h5.card-title.line-clamp-1
-              = book.title
-            p.card-text.line-clamp-2
-              = book.content
-            = link_to "View detail", "#", class: "btn btn-primary"
+  = form_with url: "#", method: :get do |form|
+    = form.search_field :query, placeholder: "Type book name, content...", class: "form-control w-25 mb-4"
+  #js-ajax-search-book
+    = render "books/book_list", books: @books
