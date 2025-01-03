@@ -5,3 +5,5 @@ import "popper";
 import "bootstrap";
 
 import "./ajax_search_book";
+import "./ajax_post_review";
+import "channels";

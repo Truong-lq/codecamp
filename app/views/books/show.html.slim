@@ -9,4 +9,5 @@ section.book-container
 
 section.review-container
   = render "review_form", book: @book, review: @review
-  = render "review_list", reviews: @book.reviews
+  #js-review-list
+    = render "review_list", reviews: @book.reviews

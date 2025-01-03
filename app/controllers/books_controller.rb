@@ -13,14 +13,15 @@ class BooksController < ApplicationController
     @review = @book.reviews.build
   end
 
-  def create_review
-    @book = Book.find_by id: params[:book_id]
-    @review = @book.reviews.build review_params
-
-    if @review.save
-      redirect_to book_path(@book)
+  def post_review
+    book = Book.find_by id: params[:book_id]
+    review = book.reviews.build review_params
+    
+    if review.save
+      html = render partial: "review_list", locals: { reviews: book.reviews }
+      ActionCable.server.broadcast("post_review_channel", html)
     else
-      render :show, status: :unprocessable_entity
+      render json: { msg: "Content cannot be blank" }
     end
   end
 

@@ -1,7 +1,11 @@
-= form_with model: review, url: book_create_review_path(book), class: "input-group w-50", local: true do |form|
+#js-msg
+
+= form_with model: review, class: "input-group w-50", local: false do |form|
   = form.text_field :content, class: "form-control"
-  .input-group-append
-    = form.submit "Post", class: "input-group-text"
+  #js-submit-btn*{ data: { book_id: book.id } }
+    .input-group-append
+      .input-group-text
+        | Post
 - if review.errors.any?
   strong
     = review.errors.full_messages.first 
