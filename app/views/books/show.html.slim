@@ -1,0 +1,12 @@
+section.book-container
+  .left-col
+    = image_tag "book.webp", alt: @book.title, class: "book-img rounded"
+  .right-col
+    h2.title
+      = @book.title
+    p.content
+      = @book.content
+
+section.review-container
+  = render "review_form", book: @book, review: @review
+  = render "review_list", reviews: @book.reviews

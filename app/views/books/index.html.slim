@@ -2,4 +2,4 @@ main.py-5
   = form_with url: "#", method: :get do |form|
     = form.search_field :query, placeholder: "Type book name, content...", class: "form-control w-25 mb-4"
   #js-ajax-search-book
-    = render "books/book_list", books: @books
+    = render "book_list", books: @books
