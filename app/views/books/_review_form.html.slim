@@ -1,0 +1,8 @@
+= form_with model: review, url: book_create_review_path(book), class: "input-group w-50", local: true do |form|
+  = form.text_field :content, class: "form-control"
+  .input-group-append
+    = form.submit "Post", class: "input-group-text"
+- if review.errors.any?
+  strong
+    = review.errors.full_messages.first 
+      
